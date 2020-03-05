@@ -18,11 +18,11 @@ public class ModelsDAO {
             em.close();
         }
     }
-    
-    public Object getById2(Integer id_rec) throws Exception {
+       
+    public Models getById2(Integer id_rec) throws Exception {
         EntityManager em = LocalEntityManagerFactory.createEntityManager();
         try {
-            Object model =  em.createNativeQuery("select * from Models where id = ?id").setParameter("id",id_rec).getSingleResult();
+            Models model = (Models) em.createNativeQuery("select * from Models where id = ?id",Models.class).setParameter("id",id_rec).getSingleResult();
             return model;
         }
         finally {
@@ -41,15 +41,54 @@ public class ModelsDAO {
         }        
     }
     
-    public List<Object[]> getAll2() {
+    public List<Models> getAll2() {
         EntityManager em = LocalEntityManagerFactory.createEntityManager();        
         try {
-            List<Object[]> list_models = (List<Object[]>) em.createNativeQuery("select * from Models").getResultList();
+            List<Models> list_models = em.createNativeQuery("select * from Models",Models.class).getResultList();
             return list_models;
         }
         finally {
             em.close();
         }
-    }    
+    }
+    
+    public void addModel(Models model) throws Exception {
+        EntityManager em = LocalEntityManagerFactory.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(model);
+            em.getTransaction().commit();
+        }
+        finally {
+            em.close();
+        }
+    }
+    
+    public void editModel(Models model) {
+        EntityManager em = LocalEntityManagerFactory.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(model);
+            em.getTransaction().commit();
+        }
+        finally {
+            em.close();
+        }
+    }
+    
+    public void deleteModel(Integer id_rec) {
+        EntityManager em = LocalEntityManagerFactory.createEntityManager();
+        try {
+            Models model = em.find(Models.class, id_rec);
+//            if (em.contains(model)) {
+                em.getTransaction().begin();
+                em.remove(model);
+                em.getTransaction().commit();
+//            }
+        }
+        finally {
+            em.close();
+        }
+    }
 
 }

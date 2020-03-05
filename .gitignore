@@ -1,0 +1,13 @@
+target/.*
+target/classes/evg/jax_ws_bu/entity/dao/ModelsDAO.class
+target/classes/evg/jax_ws_bu/entity/dao/LocalEntityManagerFactory.class
+target/classes/evg/jax_ws_bu/entity/dao/ModelsDAO.class
+target/classes/evg/jax_ws_bu/entity/Models.class
+target/classes/evg/jax_ws_bu/entity/Models_.class
+target/classes/evg/jax_ws_bu/ws/NewWebService.class
+target/generated-sources/annotations/evg/jax_ws_bu/entity/Models_.java
+target/jax_ws_bu-1.0.war
+target/jax_ws_bu-1.0/WEB-INF/classes/evg/jax_ws_bu/entity/dao/ModelsDAO.class
+target/jax_ws_bu-1.0/WEB-INF/classes/evg/jax_ws_bu/ws/NewWebService.class
+target/maven-archiver/pom.properties
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
