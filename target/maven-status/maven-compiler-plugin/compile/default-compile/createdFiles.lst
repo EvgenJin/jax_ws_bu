@@ -2,4 +2,5 @@ evg\jax_ws_bu\entity\Models.class
 evg\jax_ws_bu\entity\Models_.class
 evg\jax_ws_bu\ws\NewWebService.class
 evg\jax_ws_bu\entity\dao\LocalEntityManagerFactory.class
+evg\jax_ws_bu\entity\WebServiceEjemploWrapperRequest.class
 evg\jax_ws_bu\entity\dao\ModelsDAO.class

@@ -2,7 +2,6 @@ package evg.jax_ws_bu.entity.dao;
 
 import evg.jax_ws_bu.entity.Models;
 import java.util.List;
-import java.util.Map;
 import javax.persistence.EntityManager;
 
 
@@ -13,6 +12,9 @@ public class ModelsDAO {
         try {
             Models model =  (Models) em.createNamedQuery("Models.findById").setParameter("id",id_rec).getSingleResult();
             return model;
+        }
+        catch (Exception e) {
+            throw new Exception("Nothing found");
         }
         finally {
             em.close();
@@ -57,7 +59,7 @@ public class ModelsDAO {
         try {
             em.getTransaction().begin();
             em.persist(model);
-            em.getTransaction().commit();
+//            em.getTransaction().commit();
         }
         finally {
             em.close();

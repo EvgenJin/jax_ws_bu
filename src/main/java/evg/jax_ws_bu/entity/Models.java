@@ -15,7 +15,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -24,6 +28,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "Models")
 @XmlRootElement
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType()
 @NamedQueries({
     @NamedQuery(name = "Models.findAll", query = "SELECT m FROM Models m")
     , @NamedQuery(name = "Models.findById", query = "SELECT m FROM Models m WHERE m.id = :id")
@@ -39,18 +45,20 @@ public class Models implements Serializable {
     @Id
     @Column(name = "id")
     private Integer id;
+//    @XmlElement(name="codigo1", required=true)
+    @NotNull
     @Size(max = 2000000000)
     @Column(name = "name")
     private String name;
     @Column(name = "manufacturer_id")
     private Integer manufacturerId;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Size(min = 1, max = 2000000000)
     @Column(name = "createdAt")
     private String createdAt;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Size(min = 1, max = 2000000000)
     @Column(name = "updatedAt")
     private String updatedAt;
@@ -63,14 +71,10 @@ public class Models implements Serializable {
     public Models() {
     }
 
-    public Models(Integer id) {
-        this.id = id;
-    }
-
-    public Models(Integer id, String createdAt, String updatedAt) {
-        this.id = id;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+    public Models(String name, Integer manufacturerId, Integer typeId) {
+        this.name = name;
+        this.manufacturerId = manufacturerId;
+        this.typeId = typeId;
     }
 
     public Integer getId() {

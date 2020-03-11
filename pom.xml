@@ -14,6 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
+    <repositories>
+      <repository>
+        <id>my-repo1</id>
+        <name>your custom repo</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+      </repository>
+    </repositories>    
+    
     <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -37,6 +45,55 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+<!--        <dependency>
+             <groupId>com.sun.xml.ws</groupId>
+             <artifactId>jaxws-rt</artifactId>
+             <version>2.1.4</version>
+        </dependency>        -->
+        
+<!--<dependency>
+   <groupId>com.sun.xml.ws</groupId>
+   <artifactId>jaxws-rt</artifactId>
+   <version>2.2.8</version>
+   <exclusions>
+    <exclusion>
+     <groupId>com.sun.xml.stream</groupId>
+     <artifactId>sjsxp</artifactId>
+    </exclusion>
+   </exclusions>
+  </dependency>-->
+
+<!--  <dependency>
+   <groupId>com.sun.xml.stream.buffer</groupId>
+   <artifactId>streambuffer</artifactId>
+   <version>1.5.3</version>
+  </dependency>
+
+  <dependency>
+   <groupId>com.sun.xml.ws</groupId>
+   <artifactId>policy</artifactId>
+   <version>2.3.1</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.glassfish.gmbal</groupId>
+   <artifactId>gmbal-api-only</artifactId>
+   <version>3.2.0-b003</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.glassfish.ha</groupId>
+   <artifactId>ha-api</artifactId>
+   <version>3.1.9</version>
+  </dependency>    
+  
+      <dependency> 
+      <groupId>com.sun.xml.bind</groupId> 
+      <artifactId>jaxb-impl</artifactId> 
+      <version>2.2.6</version> 
+      <scope>runtime</scope> 
+      </dependency> -->
+                    
     </dependencies>
 
     <build>
